@@ -1,0 +1,66 @@
+<%- include('./layout/header') %>
+
+<h1>Register</h1>
+<form action="/auth/register" method="post" class="lg-form">
+  <div>
+    <label for="email">Email</label>
+    <input
+      type="text"
+      name="email"
+      id="email"
+      value="<%= locals.email ? email : '' %>"
+      
+      />
+      <!-- if incorrect passwrd , it will be erraised and mail stay on place if its correctly written -->
+    </div>
+
+
+    <div>
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        value="<%= locals.username ? username : '' %>"
+        />
+    </div>
+
+
+    <div>
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        />
+    </div>
+    
+    <div>
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        name="lastName"
+        id="lastName"
+        />
+    </div>
+
+
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" />
+  </div>
+  <div>
+    <label for="password2">Confirm password</label>
+    <input type="password" name="password2" id="password2" />
+  </div>
+  <div>
+    <input type="submit" value="Register" />
+  </div>
+</form>
+<div>
+  <p>
+    Already have an account? <span><a href="/auth/login">Login</a></span>
+  </p>
+</div>
+<br />
+<%- include('./layout/footer') %>
